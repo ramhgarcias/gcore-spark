@@ -48,6 +48,7 @@ object GcoreRunner {
     gcoreRunner.compiler.compile(
       """
         | CONSTRUCT (a :ALabel)-[e0 :e0Label]->(x GROUP p.employer :XLabel {cnt := COUNT(*)})
+        | WHEN p.name = 'Celine'
         | MATCH (c:Company)<-[e]-(p:Person)
       """.stripMargin)
   }
